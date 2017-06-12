@@ -1,0 +1,238 @@
+body{
+	background:url(../img/fond2.png);
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-attachment: fixed;
+	margin-bottom: 1700px;
+}
+
+/* @font-face kit by Fonts2u (http://www.fonts2u.com) */
+ @font-face {
+ 	font-family:"Ravie";
+ 	src:url("../fonts/RAVIE.eot?") format("eot"),url("../fonts/RAVIE.woff") format("woff"),url("../fonts/RAVIE.ttf") format("truetype"),url("../fonts/RAVIE.svg#Ravie") format("svg");
+ 	font-weight:normal;
+ 	font-style:normal;
+ }
+
+
+ #logo_1, #logo_2,#logo_3{
+ 	background:url(../img/hotels1.jpg)center;
+ 	background-repeat: no-repeat;
+ 	width:300px;
+ 	border:1px solid 0px;
+ 	height: 100px;
+ }
+
+ #logo_4{
+ 	background:url(../img/hotels2.png);
+ 	background-repeat: no-repeat;
+ 	width:260px;
+
+ 	height: 180px;
+
+
+ }
+
+
+ .cols1 #perso, .cols1 #pro {
+
+ 	background-size: cover;
+ 	width: 100px;
+ 	height:100px;
+ }
+
+/* @font-face kit by Fonts2u (http://www.fonts2u.com) */
+@font-face {
+ 	font-family:"Exo 2";
+ 	src:url("../fonts/Exo2-Regular.eot?") format("eot"),url("../fonts/Exo2-Regular.woff") format("woff"),url("../fonts/Exo2-Regular.ttf") format("truetype"),url("../fonts/Exo2-Regular.svg#Exo2-Regular") format("svg");
+	font-weight:normal;
+	font-style:normal;
+}
+
+.form1 .input1{
+	margin-top: 100px;
+	margin-bottom: 80px;
+}
+
+.form1 p{
+	font-size: 16px;
+}
+.cols1 #pass{
+
+	margin-top:50px;
+}
+.container .cols1 h1{
+	margin-top: 150px;
+	font-family: Ravie;
+	font-size: 8em;
+}
+
+.container .cols1 h2{
+	font-family: "Exo 2";
+
+}
+
+
+.cols1 .cols2 #logo{
+	background-repeat: no-repeat;
+}
+
+.cols1 .cols2 .by{
+	margin-top:170px;
+}
+
+.inscription a {
+	color:#000;
+	text-decoration: none;
+}
+.cols1 .form1 .inscription a, .inscription a, #valider, form input, form p, .cols1 .cols2 #by ,.block2 p,  span{
+	font-family: "Exo 2";
+}
+.form3 p, .para{
+	font-family: Ravie;
+}
+
+.form .p .img{
+	width:60px;border:2px solid #fff;background:#fff;padding:5px;margin-left:50px;
+}
+
+
+
+.form1 .resto{
+	background: url(../img/field.png)center;
+	background-size: cover;
+	color:#fff;
+}
+
+.cols1 .cols2 #logo{
+	margin-left: -30px;
+}
+
+.cols1 .form1{
+	width: 360px;
+	margin: 0 auto;
+}
+
+.cols1 .form1 .inscription a{
+	font-size:13px;
+
+}
+
+.block1{
+	margin-top: 200px;
+}
+
+
+#valider{
+	width: 300px;
+	background: url(../img/footer.png)center;
+	background-size: cover;
+	color:#fff;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 6px;
+	border: none;
+}
+
+.valider1{
+	width: 100%;
+	background: url(../img/footer.png)center;
+	background-size: cover;
+	color:#fff;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 6px;
+	border: none;
+}
+
+#btn{
+	background: url(../img/btn_blanc.png)center;
+	width: 40px;
+	height: 40px;
+	background-repeat: no-repeat;
+	border-radius: 60px;
+	border:1px solid #fff;
+	padding:20px;
+}
+
+
+#footer1 .bandeau1, #footer1 .bandeau2{
+	display: inline-block;
+
+}
+#perso{
+	margin-top:-120px;
+	margin-left:670px;
+	border:1px solid #fff;
+	background-color:#fff;
+	padding:10px;
+	border-radius:2px;
+}
+.cols1 div #perso_2{
+	margin-top:-120px;
+	margin-left:570px;
+	border:1px solid #fff;
+	background-color:#fff;
+	padding:10px;
+	border-radius:2px;
+	width: 100px;
+}
+
+#pro{
+	margin-top:-120px;
+	margin-left:600px;
+	border:1px solid #fff;
+	background-color:#fff;
+	padding:10px;
+	border-radius:2px;
+}
+
+#scroll{
+	margin-top:60px;
+	background-size: cover;
+	width: 30px;
+	height: 100px;
+	position:relative;
+	margin-left: 330px;
+	margin-top: -320px;
+
+}
+.imgs{
+	width: 30px;
+	height: 100px;
+	position:fixed;
+	margin-top: -160px;
+	margin-left: 640px;
+}
+
+.para{
+	margin-left:420px;
+}
+
+#titre_perso{
+	margin-top:6px;
+	margin-left:240px;
+}
+
+.cols1 .cols2{
+	margin-top:-100px;
+	margin-left:150px;
+}
+
+.cols1 .cols2 .sous-titre2{
+	margin-top: 195px;
+}
+
+#footer1 a{
+	color:#fff;
+	text-decoration: none;
+}
+
+/*main */
+
+#main{
+
+	background:url(../img/screen.png)center;
+	background-size:cover;
+
+}

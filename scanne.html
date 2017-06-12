@@ -1,0 +1,78 @@
+<html lang="fr" style="overflow:hidden">
+	<head>
+	    <meta charset="utf-8" />
+		<title>Innoside</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/style_1.css">
+		<script src="js/jquery.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easy-ticker.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+			var dd = $('.vticker').easyTicker({
+				direction: 'up',
+				easing: 'easeInOutBack',
+				speed: 'slow',
+				interval: 2000,
+				height: 'auto',
+				visible: 1,
+				mousePause: 0,
+				
+			}).data('easyTicker');
+
+			});
+	</script>
+	
+	<style>
+	.vticker{
+		background-color:rgba(0, 0, 0, 0.3);
+		
+		margin-left:2%;
+		
+		width: 50%;
+		
+	}
+	.vticker ul{
+		padding: 0;
+	}
+	.vticker li{
+	
+		list-style: none;
+		
+		padding: 10px;
+	}
+	.et-run{
+		background: red;
+	}
+	</style>
+	</head>
+	
+	
+	
+	<body style="overflow:hidden">
+		<nav  role="navigation" style="border-radius:0px; padding-top:2%;padding-right:2% " >
+		
+					<span class="vticker" style="width:140px">					
+					<ul>
+					<li><font color="white"><!-- weather widget start --><a target="_blank" href="http://hotelmix.fr/weather/toulouse-927"><img src="https://w.bookcdn.com/weather/picture/26_927_1_3_95a5a6_250_7f8c8d_ffffff_ffffff_1_2071c9_ffffff_0_6.png?scode=13115-20170529&domid=581&anc_id=76589"  alt="booked.net"/></a><!-- weather widget end --></font></li>
+					
+					</ul>
+					
+					</span>
+				<a href="moi.html"><img src="img/moi_white.png" style="width:35px;height:35px;float:right"></a>
+		</nav>
+		
+					<span class="col-md-12" >
+					<a href="realite.html"><p style="margin-top:200px;margin-bottom:350px"><img src="img/hotel1.jpg" class="img-responsive"></p></a>
+					</span>
+			
+		<nav class="navbar navbar-fixed-bottom" role="navigation" style="padding-bottom:2%;padding-left:2%;padding-right:2%">
+				<a href="position.html"><img src="img/position.png" style="width:27px;height:35px;float:left"></a>
+				<a href="univers.html"><img src="img/menu.png" style="width:27px;height:35px;float:right"></a>
+		</nav>
+
+		
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+	</body>
+</html>

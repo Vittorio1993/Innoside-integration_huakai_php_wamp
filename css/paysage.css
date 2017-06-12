@@ -1,0 +1,9 @@
+@media screen and (max-width: 800px) {
+	.cols1 .cols2 .sous-titre2{
+		margin-top: 195px;
+	}
+	.cols1 .cols2{
+		margin-top:-100px;
+		margin-left:150px;
+	}
+}

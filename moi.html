@@ -1,0 +1,107 @@
+<html lang="fr">
+	<head>
+	    <meta charset="utf-8" />
+		<title>Innoside</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<style>
+		#div1{
+        width:80px;
+        height: 45px;
+        border-radius: 50px;
+        position: relative;
+		}
+		#div2{
+			width: 40px;
+			height: 40px;
+			border-radius: 48px;
+			position: absolute;
+			background: white;
+			box-shadow: 0px 2px 4px rgba(0,0,0,0.4);
+		}
+		.open1{
+			background: rgba(0,184,0,0.8);
+		}
+		.open2{
+			top: 2px;
+			right: 1px;
+		}
+		.close1{
+			background: rgba(255,255,255,0.4);
+			border:3px solid rgba(0,0,0,0.15);
+			border-left: transparent;
+		}
+		.close2{
+			left: 0px;
+			top: 0px;
+			border:2px solid rgba(0,0,0,0.1);
+		}
+		</style>
+		
+		<script>
+		window.onload=function(){
+        var div2=document.getElementById("div2");
+        var div1=document.getElementById("div1");
+        div2.onclick=function(){
+          div1.className=(div1.className=="close1")?"open1":"close1";
+          div2.className=(div2.className=="close2")?"open2":"close2";
+        }
+		}
+		</script>
+		
+	</head>
+	<body>
+		<div class="container">
+		<nav style="border-radius:0px; padding-top:2%;padding-left:2%;padding-right:2%" class="navbar  navbar-fixed-top " role="navigation">
+				<a href="scanne.html"><img src="img/btn1.png" style="width:35px;height:35px;float:left;" class="img-responsive center-block"></a>
+				<a href="moi.html"><img src="img/moi.png" style="width:35px;height:35px;float:right" class="img-responsive center-block"></a>
+		</nav>
+		<div  style="margin-top:100px;margin-bottom:100px">
+			<div style="margin-left:15%;margin-right:15%">
+				<P style="font-size:6em;">Moi<img width="30%" style="float:right" src="img/plus.png" ></P>
+			</div>	
+		</div>
+		<div class="row" style="margin-top:100px;margin-bottom:100px">
+			<div class="col-md-6"style="margin-left:15%;margin-right:15%">
+					<div  style="font-size:30px;width:50% ;float:left">Je suis visible</div>
+					<div id="div1" class="open1" style="float:right">
+						<div id="div2" class="open2" style="float:right"></div>
+					</div>	
+			</div>
+			<div class="col-md-6">
+				<div id="switch-subscribe" class="switch-h1 switch-subscribe">
+					<div class="circle-h1"></div>
+					<input type="hidden" id="subscribe" class="form-control" name="subscribe" value="non">
+					</div>
+			</div>
+		</div>
+					<div style="margin-left:15%;margin-right:15%" class="col-md-3 col-md-push-4 form1">
+						<form style="text-align:center" class="form-group" >
+							<input type="text" class="form-control text-center" placeholder="Pr&eacute;nom"></br>
+							<input type="text" class="form-control text-center" placeholder="Statut"></br>
+							<input type="text" class="form-control text-center" placeholder="Email"></br>
+							<input type="text" class="form-control text-center" placeholder="Date de naissance" onfocus="(this.type='date')" ></br>
+							<input type="text" class="form-control text-center" placeholder="Activit&eacute;"></br>
+							<input type="text" class="form-control text-center" placeholder="Loisir"></br>
+							<input type="text" class="form-control text-center" placeholder="Informations suppl&eacute;mentaires"></br>
+							<p><button style="width:150px" class="btn btn-default btn-lg glyphicon glyphicon-chevron-right">&nbsp;<font style="font-family:sans-serif">Modifier</font></a></button></p>
+							<br/><br/>
+						</form>
+					</div>
+				</div>
+
+
+		</br></br>
+		<nav style="padding-bottom:2%;padding-left:2%;padding-right:2%"class="navbar navbar-fixed-bottom" role="navigation" >
+				<a href="position.html"><img src="img/position.png" style="width:27px;height:35px;float:left"></a>
+				<a href="univers.html"><img src="img/menu.png" style="width:27px;height:35px;float:right"></a>
+		</nav>
+
+		</div>	<!-- container -->
+
+
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+	</body>
+</html>
