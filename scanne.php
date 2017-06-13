@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr" style="overflow:hidden">
 	<head>
@@ -130,11 +133,18 @@
 					</div>	
 				</div>
 				<div>
-					<input type="text" class="form-control text-center" placeholder="Nom">
-					<input type="text" class="form-control text-center" placeholder="Pr&eacute;nom">
-					<input type="text" class="form-control text-center" placeholder="Date de naissance" onfocus="(this.type='date')" >
-					<input type="text" class="form-control text-center" placeholder="Email">
-					<button style="width:150px" class="btn btn-default btn-lg glyphicon glyphicon-chevron-right">&nbsp;<font style="font-family:sans-serif">Modifier</font></a></button>
+				<?php
+					require("function.php");
+					$session=connectBD("root","root");
+					echo '<form method="POST" action="scanne.php">';
+					echo '<input type="text" class="form-control text-center" placeholder="Nom : '.$_SESSION['NOM'].'">';
+					echo '<input type="text" class="form-control text-center" placeholder="Pr&eacute;nom : '.$_SESSION['PRENOM'].'">';
+					echo '<input type="text" class="form-control text-center" placeholder="Date de naissance : '.$_SESSION['DATE'].'" onfocus="(this.type=\'date\')" >';
+					echo '<input type="text" class="form-control text-center" placeholder="Email : '.$_SESSION['EMAIL'].'">';
+					echo '<button style="width:150px" class="btn btn-default btn-lg glyphicon glyphicon-chevron-right">&nbsp;<font style="font-family:sans-serif">Modifier</font></a></button>';
+	
+					
+				?>
 					<div class="close"></div>
 				</div>
 			</div>

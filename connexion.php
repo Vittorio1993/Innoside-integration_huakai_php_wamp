@@ -1,7 +1,3 @@
-<?php
-session_start()
-?>
-
 <html lang="fr">
 	<head>
 		<title>Innoside | Connexion</title>
@@ -21,9 +17,9 @@ session_start()
 				</div>
 
 				<div class="col-md-8 col-md-push-4 form1">
-					<form method="POST" action="scanne.html" class="form-group">
-						<input type="text" name="email" class="form-control text-center" placeholder="Adresse email"></br>
-						<input type="text" name="mot" class="form-control text-center" placeholder="Mot de passe"></br>
+					<form method="POST" action="connexion.php" class="form-group">
+						<input type="email" name="email" class="form-control text-center" placeholder="Adresse email" required></br>
+						<input type="password" name="mot" class="form-control text-center" placeholder="Mot de passe"></br>
 						<p style="font-size:16px" class="text text-right "><a href="forgot_password.html"><font color="black">Mot de passe oubli&eacute;</font></a></p>
 						</br>
 				</div>
@@ -33,9 +29,43 @@ session_start()
 			
 			<p><button type="submit" style="width:150px" class="btn btn-default btn-lg glyphicon glyphicon-chevron-right" >&nbsp;<font style="font-family:sans-serif">Valider</font></button></p>
 					</form>
-			<button style="width:150px" class="btn btn-default btn-lg  "><a href="inscription.html">Inscription</a></button>
+			<button style="width:150px" class="btn btn-default btn-lg  "><a href="inscription.php">Inscription</a></button>
 		</div>
-			
-		
 	</body>
+	<?php
+		session_start();
+		if(isset($_POST['email']) and isset($_POST['mot'])){
+			require("function.php");
+			$session=connectBD("root","root");	
+				$_SESSION['EMAIL']=$_POST['email'];
+				$password=$_POST['mot'];
+				$veriflogin= controlelogin($session,$_SESSION['EMAIL']);
+				$verifpassword= password($session,$_SESSION['EMAIL'],$password);
+				if ($veriflogin==true){
+					if ($verifpassword==true){
+						$sql="select NOMM, PRENOMM, DATEDENAISSANCE
+							  from membres
+							  where EMAIL='".$_SESSION['EMAIL']."'";
+						$resultat=mysqli_query($session,$sql);
+						while($linge=mysqli_fetch_array($resultat)){
+							$_SESSION['NOM']=$linge['NOMM'];
+							$_SESSION['PRENOM']=$linge['PRENOMM'];
+							$_SESSION['DATE']=$linge['DATEDENAISSANCE'];
+						}
+						echo "<script language='javascript' type='text/javascript'>" ;
+						echo "window.location.href='scanne.php'";
+						echo "</script>";
+					}
+					else{
+						echo '<p align=center>Mot de passe incorrect.</p>';
+					}
+				}
+				else{
+					echo '<p align=center>Email incconu</p>';
+				}
+
+			}
+		?>	
+
+	
 </html>

@@ -1,5 +1,5 @@
 <?php
-	session_start()
+	session_start();
 ?>
 <html lang="fr">
 	<head>
@@ -27,13 +27,13 @@
 				</div>
 
 				<div class="col-md-8 col-md-push-4 form1">
-					<form class="form-group" method="POST" action="connexion_after_inscription.php">
-						<input type="text" name="nom" class="form-control text-center" placeholder="Nom"></br>
-						<input type="text" name="prenom" class="form-control text-center" placeholder="Pr&eacute;nom"></br>
-						<input type="text" name="date" class="form-control text-center" placeholder="Date de naissance" onfocus="(this.type='date')" ></br>
-						<input type="email" name="email" class="form-control text-center" placeholder="Email"></br>
-						<input type="password" name="motdepasse" class="form-control text-center" placeholder="Mot de passe"></br>
-						<input type="password" name="confirmot" class="form-control text-center" placeholder="Confirmez mot de passe"></br>
+					<form class="form-group" method="POST" action="inscription.php">
+						<input type="text" name="nom" class="form-control text-center" placeholder="Nom" required></br>
+						<input type="text" name="prenom" class="form-control text-center" placeholder="Pr&eacute;nom" required></br>
+						<input type="text" name="date" class="form-control text-center" placeholder="Date de naissance" onfocus="(this.type='date')" required></br>
+						<input type="email" name="email" class="form-control text-center" placeholder="Email" required></br>
+						<input type="password" name="motdepasse" class="form-control text-center" placeholder="Mot de passe" required></br>
+						<input type="password" name="confirmot" class="form-control text-center" placeholder="Confirmez mot de passe" required></br>
 						
 
 					
@@ -49,4 +49,28 @@
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/bootstrap.js"></script>
 	</body>
+	<?php
+		require("function.php");
+		$session=connectBD("root","root");
+		if(isset($_POST['email'])){
+			if(!controlelogin($session,$_POST['email'])){
+				if($_POST['motdepasse']==$_POST['confirmot']){
+					$sqlmembre="insert into membres (NOMM, PRENOMM, EMAIL, MOTDEPASSE, DATEDENAISSANCE) values (?,?,?,?,?)";
+					$ordresqlmembre=mysqli_prepare($session,$sqlmembre);
+					mysqli_stmt_bind_param($ordresqlmembre,"sssss",$_POST['nom'],$_POST['prenom'],$_POST['email'],$_POST['motdepasse'],$_POST['date']);
+					mysqli_stmt_execute($ordresqlmembre);
+					echo "<script language='javascript' type='text/javascript'>" ;
+					echo "window.location.href='connexion_after_inscription.php'";
+					echo "</script>";	
+				}
+				else{
+					echo "<p align=center>les 2 mots de passe ne sont pas identiques.</p>";
+				}
+			}
+			else{
+				echo "<p align=center>Email déjà exist.</p>";
+			}
+							
+		}
+	?>
 </html>
