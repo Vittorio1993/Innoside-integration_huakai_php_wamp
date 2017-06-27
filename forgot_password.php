@@ -31,12 +31,13 @@
 					</form>
 		</div>
 		<?php
-		if isset($_POST['email'])
-        $_SESSION['mailpass']=$_POST['email'];
-		 function(){
+		if (isset($_POST['email'])){
 		 	require('gmail.php');
+		 	sentmail($_POST['email']);
 		 	echo "un email a envoyé.";
-		 }
+		}
+        
+		 
 		?>
 	</body>
 </html>

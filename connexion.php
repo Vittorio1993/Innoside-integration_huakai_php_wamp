@@ -20,7 +20,7 @@
 					<form method="POST" action="connexion.php" class="form-group">
 						<input type="email" name="email" class="form-control text-center" placeholder="Adresse email" required></br>
 						<input type="password" name="mot" class="form-control text-center" placeholder="Mot de passe"></br>
-						<p style="font-size:16px" class="text text-right "><a href="forgot_password.html"><font color="black">Mot de passe oubli&eacute;</font></a></p>
+						<p style="font-size:16px" class="text text-right "><a href="forgot_password.php"><font color="black">Mot de passe oubli&eacute;</font></a></p>
 						</br>
 				</div>
 			</div><!-- cols1 -->
@@ -43,7 +43,7 @@
 				$verifpassword= password($session,$_SESSION['EMAIL'],$password);
 				if ($veriflogin==true){
 					if ($verifpassword==true){
-						$sql="select NOMM, PRENOMM, DATEDENAISSANCE
+						$sql="select NOMM, PRENOMM, DATEDENAISSANCE,IDM
 							  from membres
 							  where EMAIL='".$_SESSION['EMAIL']."'";
 						$resultat=mysqli_query($session,$sql);
@@ -51,6 +51,7 @@
 							$_SESSION['NOM']=$linge['NOMM'];
 							$_SESSION['PRENOM']=$linge['PRENOMM'];
 							$_SESSION['DATE']=$linge['DATEDENAISSANCE'];
+							$_SESSION['IDM']=$linge['IDM'];
 						}
 						echo "<script language='javascript' type='text/javascript'>" ;
 						echo "window.location.href='scanne.php'";

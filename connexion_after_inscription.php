@@ -18,7 +18,7 @@
 					<form class="form-group" method="POST" action="connexion_after_inscription.php">
 						<input type="email" name="email" class="form-control text-center" placeholder="Adresse email" required></br>
 						<input type="password" name="password" class="form-control text-center" placeholder="Mot de passe"></br>
-						<p style="font-size:16px" class="text text-right "><a href="forgot_password.html"><font color="black">Mot de passe oubli&eacute;</font></a></p>
+						<p style="font-size:16px" class="text text-right "><a href="forgot_password.php"><font color="black">Mot de passe oubli&eacute;</font></a></p>
 						</br>
 							
 				</div>

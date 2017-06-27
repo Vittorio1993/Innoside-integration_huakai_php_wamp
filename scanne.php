@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="fr" style="overflow:hidden">
 	<head>
+
 		<meta charset="UTF-8" />
 		<title>Innoside</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -137,14 +138,36 @@
 					require("function.php");
 					$session=connectBD("root","root");
 					echo '<form method="POST" action="scanne.php">';
-					echo '<input type="text" class="form-control text-center" placeholder="Nom : '.$_SESSION['NOM'].'">';
-					echo '<input type="text" class="form-control text-center" placeholder="Pr&eacute;nom : '.$_SESSION['PRENOM'].'">';
-					echo '<input type="text" class="form-control text-center" placeholder="Date de naissance : '.$_SESSION['DATE'].'" onfocus="(this.type=\'date\')" >';
-					echo '<input type="text" class="form-control text-center" placeholder="Email : '.$_SESSION['EMAIL'].'">';
-					echo '<button style="width:150px" class="btn btn-default btn-lg glyphicon glyphicon-chevron-right">&nbsp;<font style="font-family:sans-serif">Modifier</font></a></button>';
-	
+					echo '<input type="text" name="nom" class="form-control text-center" value="'.$_SESSION['NOM'].'">';
+					echo '<input type="text" name="prenom" class="form-control text-center" value="'.$_SESSION['PRENOM'].'">';
+					echo '<input type="text" name="date" class="form-control text-center" value="'.$_SESSION['DATE'].'" onfocus="(this.type=\'date\')" >';
+					echo '<input type="text" name="email" class="form-control text-center" value="'.$_SESSION['EMAIL'].'">';
+					echo '<button style="width:150px" type="submit" class="btn btn-default btn-lg glyphicon glyphicon-chevron-right">&nbsp;<font style="font-family:sans-serif">Modifier</font></a></button></form>';
+		
 					
-				?>
+
+				if(isset($_POST['nom']) or isset($_POST['prenom']) or isset($_POST['date']) or isset($_POST['email'])){
+				
+				echo '123';
+				$_SESSION['NOM']=$_POST['nom'];
+				$_SESSION['PRENOM']=$_POST['prenom'];
+				$_SESSION['DATE']=$_POST['date'];
+				$_SESSION['EMAIL']=$_POST['email'];
+				echo $_POST['date'];
+
+
+				$sqlmembre="update membres set NOMM=?, PRENOMM=?, DATEDENAISSANCE=?, EMAIL=?
+							where IDM='".$_SESSION['IDM']."'";
+				$ordresqlmembre=mysqli_prepare($session,$sqlmembre);
+				mysqli_stmt_bind_param($ordresqlmembre,"ssss",$_POST['nom'],$_POST['prenom'],$_POST['date'],$_POST['email']);	
+				mysqli_stmt_execute($ordresqlmembre);
+				echo "<script language='javascript' type='text/javascript'>" ;
+				echo "window.location.href='scanne.php'";
+				echo "</script>";
+				}
+				
+
+		?>
 					<div class="close"></div>
 				</div>
 			</div>
@@ -235,9 +258,11 @@
 					}
 					
 		</script>
+		
 			
 		
 	
 		
 	</body>
+	
 </html>
