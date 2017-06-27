@@ -7,10 +7,10 @@
 		<script type="text/javascript" src="js/bootstrap.js"></script>
 	</head>
 	<body>
-		<div class="container">
+<div class="container" >
 			<div class="row cols1">
 				<div class="col-md-12 col-sm-12 col-lg-12">
-					<h1 class="text text-center titre1" ><img width="30%" height="30%" style="margin-left:auto; margin-right:auto;" src="img/innoside_hexagon_hdpi.png" class="img-responsive" id="logo" ></h1>
+					<h1 class="text text-center titre1" ><img width="25%" height="25%" style="margin-left:auto; margin-right:auto;" src="img/innoside_hexagon_hdpi.png" class="img-responsive" id="logo" ></h1>
 					</br></br>
 					<h2 class="text text-center ">Identifiez-vous</h2>
 					</br>

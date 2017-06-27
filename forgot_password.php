@@ -7,7 +7,7 @@
 		<script type="text/javascript" src="js/bootstrap.js"></script>
 	</head>
 	<body>
-		<div class="container" style="margin-top:30%">
+		<div class="container" style="margin-top:15px">
 			<div class="row cols1">
 				<div class="col-md-8 col-md-push-4 form1">
 					<h2 style="text-align:justify">Mot de passe oubli&eacute; ?</h2>
@@ -26,7 +26,7 @@
 
 			</div><!-- cols1 -->
 		</div>	<!-- container -->
-		<div id="footer1"style="text-align:center">
+		<div id="footer1"style="margin-bottom:15PX;text-align:center">
 			<p><button style="width:150px" type="submit" class="btn btn-default btn-lg glyphicon glyphicon-chevron-right" onclick="function()">&nbsp;<font style="font-family:sans-serif">Envoyer</font></button></p>
 					</form>
 		</div>
@@ -35,6 +35,9 @@
 		 	require('gmail.php');
 		 	sentmail($_POST['email']);
 		 	echo "un email a envoyé.";
+		 	echo "<script language='javascript' type='text/javascript'>" ;
+			echo "window.location.href='scanne.php'";
+			echo "</script>";
 		}
         
 		 

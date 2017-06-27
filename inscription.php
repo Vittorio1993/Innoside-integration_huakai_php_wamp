@@ -21,7 +21,7 @@
 		<div class="container">
 			<div class="row cols1">
 				<div class="col-md-12 col-sm-12 col-lg-12 ">
-					<h1 class="text text-center titre1" ><img width="30%" height="30%" style="margin-left:auto; margin-right:auto;" src="img/innoside_hexagon_hdpi.png" class="img-responsive" id="logo" ></h1>
+					<h1 class="text text-center titre1" ><img width="25%" height="25%" style="margin-left:auto; margin-right:auto;" src="img/innoside_hexagon_hdpi.png" class="img-responsive" id="logo" ></h1>
 					<h2 class="text text-center titre1">Inscrivez-vous</h2>
 					</br></br>
 				</div>
@@ -42,8 +42,7 @@
 			</div><!-- cols1 -->
 		</div>	<!-- container -->
 		<div id="footer1"style="text-align:center">
-			<p><button type="submit" style="width:150px" class="btn btn-default btn-lg glyphicon glyphicon-chevron-right">&nbsp;Valider</button></p>
-					</form>
+			<p><button style="width:150px" class="btn btn-default btn-lg glyphicon glyphicon-chevron-right">&nbsp;<a href="connexion_after_inscription.html"><font style="font-family:sans-serif">Valider</font></a></button></p></div></form>
 		</div>
 
 		<script type="text/javascript" src="js/jquery.js"></script>
