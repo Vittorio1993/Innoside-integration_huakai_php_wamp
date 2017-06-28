@@ -147,7 +147,7 @@
 					
 
 				if(isset($_POST['nom']) or isset($_POST['prenom']) or isset($_POST['date']) or isset($_POST['email'])){
-					if(!controlelogin($session,$_POST['email'])){
+					
 						$_SESSION['NOM']=$_POST['nom'];
 						$_SESSION['PRENOM']=$_POST['prenom'];
 						$_SESSION['DATE']=$_POST['date'];
@@ -161,7 +161,7 @@
 						echo "<script language='javascript' type='text/javascript'>" ;
 						echo "window.location.href='scanne.php'";
 						echo "</script>";
-					}
+					
 					
 				}
 		?>

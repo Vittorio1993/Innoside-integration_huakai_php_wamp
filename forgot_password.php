@@ -37,6 +37,7 @@
 		</div>
 		<?php
 		if (isset($_POST['email'])){
+			echo "yes";
 			$_SESSION['emailenvoie']=$_POST['email'];
 		 	$sql="select MOTDEPASSE
 				  from membres
@@ -44,6 +45,8 @@
 			$resultat=mysqli_query($session,$sql);
 			while($linge=mysqli_fetch_array($resultat)){
 				$_SESSION['mot']=$linge['MOTDEPASSE'];
+				echo $_SESSION['mot'];
+				echo "yes";
 				}
 			require('gmail.php');
 		 	sentmail($_POST['email']);
