@@ -1,3 +1,8 @@
+<?php 
+	session_start();
+	require("function.php");
+	$session=connectBD("root","root");
+?>
 <html lang="fr">
 	<head>
 		<title>Innoside | Oublie mot de passe</title>
@@ -32,11 +37,19 @@
 		</div>
 		<?php
 		if (isset($_POST['email'])){
-		 	require('gmail.php');
+			$_SESSION['emailenvoie']=$_POST['email'];
+		 	$sql="select MOTDEPASSE
+				  from membres
+				  where EMAIL='".$_SESSION['emailenvoie']."'";
+			$resultat=mysqli_query($session,$sql);
+			while($linge=mysqli_fetch_array($resultat)){
+				$_SESSION['mot']=$linge['MOTDEPASSE'];
+				}
+			require('gmail.php');
 		 	sentmail($_POST['email']);
 		 	echo "un email a envoyé.";
 		 	echo "<script language='javascript' type='text/javascript'>" ;
-			echo "window.location.href='scanne.php'";
+			echo "window.location.href='new_password.php'";
 			echo "</script>";
 		}
         

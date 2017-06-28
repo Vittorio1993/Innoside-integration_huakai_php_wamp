@@ -1,3 +1,6 @@
+<?php 
+	session_start();	
+?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -5,11 +8,17 @@
   <title>PHPMailer Test</title>
 </head>
 <body>
+<?php
+echo "<h1>";
+echo "yes";
+echo "</h1>";
+?>
 <div style="width: 640px; font-family: Arial, Helvetica, sans-serif; font-size: 11px;">
-  <h1>This is a test of PHPMailer.</h1>
-  <div align="center">
-    <a href="https://github.com/PHPMailer/PHPMailer/"><img src="images/phpmailer.png" height="90" width="340" alt="PHPMailer rocks"></a>
-  </div>
+
+  
+  Votre ancien mot de passe est 
+
+  
   <p>This example uses <strong>HTML</strong>.</p>
   <p>ISO-8859-1 text: éèîüçÅñæß</p>
 </div>

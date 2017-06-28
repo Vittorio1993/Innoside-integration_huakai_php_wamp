@@ -32,7 +32,7 @@
 						<input type="text" name="prenom" class="form-control text-center" placeholder="Pr&eacute;nom" required></br>
 						<input type="text" name="date" class="form-control text-center" placeholder="Date de naissance" onfocus="(this.type='date')" required></br>
 						<input type="email" name="email" class="form-control text-center" placeholder="Email" required></br>
-						<input type="password" name="motdepasse" class="form-control text-center" placeholder="Mot de passe" required></br>
+						<input type="password" name="motdepasse" class="form-control text-center" pattern="[0-9A-Za-z]{6,}" placeholder="Mot de passe" required></br>
 						<input type="password" name="confirmot" class="form-control text-center" placeholder="Confirmez mot de passe" required></br>
 						
 

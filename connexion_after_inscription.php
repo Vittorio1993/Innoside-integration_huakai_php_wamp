@@ -43,7 +43,7 @@
 				$verifpassword= password($session,$_SESSION['EMAIL'],$password);
 				if ($veriflogin==true){
 					if ($verifpassword==true){
-						$sql="select NOMM, PRENOMM, DATEDENAISSANCE
+						$sql="select NOMM, PRENOMM, DATEDENAISSANCE, IDM
 							  from membres
 							  where EMAIL='".$_SESSION['EMAIL']."'";
 						$resultat=mysqli_query($session,$sql);
@@ -51,6 +51,7 @@
 							$_SESSION['NOM']=$linge['NOMM'];
 							$_SESSION['PRENOM']=$linge['PRENOMM'];
 							$_SESSION['DATE']=$linge['DATEDENAISSANCE'];
+							$_SESSION['IDM']=$linge['IDM'];
 						}
 						echo "<script language='javascript' type='text/javascript'>" ;
 						echo "window.location.href='scanne.php'";
