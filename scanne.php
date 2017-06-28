@@ -147,26 +147,23 @@
 					
 
 				if(isset($_POST['nom']) or isset($_POST['prenom']) or isset($_POST['date']) or isset($_POST['email'])){
-				
-				echo '123';
-				$_SESSION['NOM']=$_POST['nom'];
-				$_SESSION['PRENOM']=$_POST['prenom'];
-				$_SESSION['DATE']=$_POST['date'];
-				$_SESSION['EMAIL']=$_POST['email'];
-				echo $_POST['date'];
-
-
-				$sqlmembre="update membres set NOMM=?, PRENOMM=?, DATEDENAISSANCE=?, EMAIL=?
-							where IDM='".$_SESSION['IDM']."'";
-				$ordresqlmembre=mysqli_prepare($session,$sqlmembre);
-				mysqli_stmt_bind_param($ordresqlmembre,"ssss",$_POST['nom'],$_POST['prenom'],$_POST['date'],$_POST['email']);	
-				mysqli_stmt_execute($ordresqlmembre);
-				echo "<script language='javascript' type='text/javascript'>" ;
-				echo "window.location.href='scanne.php'";
-				echo "</script>";
+					if(!controlelogin($session,$_POST['email'])){
+						$_SESSION['NOM']=$_POST['nom'];
+						$_SESSION['PRENOM']=$_POST['prenom'];
+						$_SESSION['DATE']=$_POST['date'];
+						$_SESSION['EMAIL']=$_POST['email'];
+						echo $_POST['date'];
+						$sqlmembre="update membres set NOMM=?, PRENOMM=?, DATEDENAISSANCE=?, EMAIL=?
+									where IDM='".$_SESSION['IDM']."'";
+						$ordresqlmembre=mysqli_prepare($session,$sqlmembre);
+						mysqli_stmt_bind_param($ordresqlmembre,"ssss",$_POST['nom'],$_POST['prenom'],$_POST['date'],$_POST['email']);	
+						mysqli_stmt_execute($ordresqlmembre);
+						echo "<script language='javascript' type='text/javascript'>" ;
+						echo "window.location.href='scanne.php'";
+						echo "</script>";
+					}
+					
 				}
-				
-
 		?>
 					<div class="close"></div>
 				</div>
